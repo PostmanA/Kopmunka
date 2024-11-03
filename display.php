@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root"; // Default XAMPP MySQL username
 $password = ""; // Default XAMPP MySQL password is an empty string
-$dbname = "test"; // Your database name
+$dbname = "jegyzetek"; // Your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// SQL query to select all records from the test table
-$sql = "SELECT id, name, cikkek FROM test";
+// SQL query to select all records from the jegyzetek table
+$sql = "SELECT id, name, cikkek FROM cikkek";
 $result = $conn->query($sql);
 
 // Check if any records were returned and display them
