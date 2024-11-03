@@ -21,7 +21,7 @@ label {
 }
 
 input[type="text"], input[type="password"] {
-    width: 50%;
+    width: auto;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -29,7 +29,7 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="submit"] {
-    width: 90%;
+    width: auto;
     padding: 15px;
     border-radius: 5px;
     border: none;
@@ -93,27 +93,24 @@ nav ul li a:hover {
     justify-content: center;
     gap: 30px;
     padding: 20px;
-    width: auto;
 }
 
 /* Style for each subject */
 .subject {
     text-align: center;
-    width: auto;
 }
 
 /* Style for the subject headings */
 .subject h2 {
     font-size: 20px;
     margin-bottom: 10px;
-    width: auto;
 }
 
 /* Style for the buttons */
 .subject-button {
     display: block;
     margin: 10px;
-    width: auto; /* Adjust size as needed */
+    width: 200px; /* Adjust size as needed */
     height: 200px;
     overflow: hidden;
     border-radius: 10px;
