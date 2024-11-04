@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login_register.css">
     <script src="script.js"></script>
 </head>
 <body>
+<div id="game-container">
+    <div id="question-container" class="column">
     <form action="register.php" method="post">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         <input type="submit" value="Register">
+        <a href="login.php" class="login_button">Login</a>
     </form>
+</div>
 </div>
 </body>
 </html>

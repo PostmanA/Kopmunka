@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legyen ön is elektromos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <nav>
@@ -43,6 +42,14 @@
             <h2>Számítógépes rendszerek</h2>
             <a href="pos.php" class="subject-button">
                 <img src="pc.png" alt="Számítógépes rendszerek 1">
+            </a>
+
+        </div>
+
+        <div class="subject">
+            <h2>Játék</h2>
+            <a href="game.php" class="subject-button">
+                <img src="psController.png" alt="Játék">
             </a>
 
         </div>

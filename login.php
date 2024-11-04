@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login_register.css">
 </head>
 <body>
+<div id="game-container">
+    <div id="question-container" class="column">
     <form action="login.php" method="post">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="submit" value="Login">
+        <a href="register.php" class="register_button">Register</a>
     </form>
+    </div>
 </div>
 
 </body>
