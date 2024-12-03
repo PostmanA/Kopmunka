@@ -28,6 +28,11 @@ if ($conn->connect_error) {
      <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="logout.php">Logout</a></li>
+            <li class="dropdown">
+    <a class="dropbtn">NYELV</a>
+    <div class="dropdown-content">
+      <a href="eng_index.php">ENGLISH</a>
+        </ul>
         </ul>
         <br>
          ELEKTROTECHNIKA
