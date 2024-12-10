@@ -1,3 +1,19 @@
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root"; // Change to your MySQL username
+$password = ""; // Change to your MySQL password
+$dbname = "user_registration";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="hun">
 <head>
@@ -46,7 +62,7 @@
         </div>
         <div class="subject">
             <h2>Játék</h2>
-            <a href="game.php" class="subject-button">
+            <a href="game2.php" class="subject-button">
                 <img src="psController.png" alt="Játék">
             </a>
         </div>
