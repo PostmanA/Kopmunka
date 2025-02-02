@@ -1,16 +1,11 @@
 <?php
-// Database connection
-$servername = "localhost";
-$username = "root"; // Change to your MySQL username
-$password = ""; // Change to your MySQL password
-$dbname = "user_registration";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login2.php");
+    exit;
 }
 ?>
 
@@ -27,10 +22,12 @@ if ($conn->connect_error) {
         <ul>
             <li><a href="index.php">FŐOLDAL</a></li>
             <li><a href="logout.php">KIJELENTKEZÉS</a></li>
+            <li><a href="reset-password.php">JELSZO VALTOZTATAS</a></li>
             <li class="dropdown">
     <a class="dropbtn">NYELV</a>
     <div class="dropdown-content">
       <a href="eng_index.php">ENGLISH</a>
+      <li><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></li>
         </ul>
     </nav>
     <h1 class="mtitle">Legyen ön is elektromos</h1>
