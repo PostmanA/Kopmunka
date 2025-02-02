@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
     <link rel="stylesheet" href="login_register.css">
     <script src="script.js"></script>
 </head>
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ss", $username, $hashed_password);
 
         if ($stmt->execute()) {
-            header("Location: index.php");
+            header("Location: login.php");
         } else {
             echo "Error: " . $stmt->error;
         }

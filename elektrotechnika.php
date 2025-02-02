@@ -42,7 +42,7 @@ $conn->close();
         <li class="dropdown">
     <a class="dropbtn">NYELV</a>
     <div class="dropdown-content">
-      <a href="eng_pos.php">ENGLISH</a>
+      <a href="eng_elektrotechnika.php">ENGLISH</a>
     </ul>
     </nav>
     </div>
@@ -53,23 +53,30 @@ $conn->close();
             <div class="card">
             <h2>Ohm Törvénye</h2>
             <p>Ohm német fizikus (1787-1854) az ellenállást a feszültségből és a hatására kialakuló áramerősségből határozta meg. Azt tapasztalta, hogy egy áramkörben a két mennyiség hányadosa jellemző az adott fogyasztóra és állandó érték:</p>
-            <a href="elektrotechnika_anyag1.php">Tovabb...</a>
+            <a href="elektrotechnika_anyag1.php"> Olvasson tovább...</a>
         </div>
         <div class="card">
-            <h2></h2>
-            <p></p>
+            <h2>Kirchhoff törvények</h2>
+            <p>Egy tetszőlegesen bonyolult hálózat bármely elemére külön-külön alkalmazható az
+egyszerű áramkörnél megismert Ohm törvény, hiszen ez az összetartozó U, I és R
+mennyiségek közötti kapcsolatot mutatja meg. Több elemből álló rendszerben a
+Kirchhoff törvények nyújtanak segítséget.</p>
+        <a href="elektrotechnika_anyag2.php">Olvasson tovább...</a>
         </div>
         <div class="card">
-            <h2></h2>
-            <p></p>
+            <h2>Nevezetes passzív villamos hálózatok</h2>
+            <p>A feszültségosztó
+            Az Ohm és Kirchhoff törvényeket nevezetes kapcsolásokra alkalmazva további
+            fontos törvényszerűségeket állapíthatunk meg.</p>
+            <a href="elektrotechnika_anyag3.php">Olvasson tovább...</a>
         </div>
         </div>
         <div class="comment-section">
-        <h1 style="text-align: center">Komment szekcio</h1>
+        <h1 style="text-align: center">Komment szekció</h1>
         <form action="elektrotechnika.php" method="post">
-        <input type="text" name="username" placeholder="Felhasznalonev" required>
-        <input type="text" name="message" placeholder="Hozzsaszolas" required>
-        <input type="submit" value="Elkuldes">
+        <input type="text" name="username" placeholder="Felhasználónév" required>
+        <input type="text" name="message" placeholder="Hozzsászólás" required>
+        <input type="submit" value="Elküldés">
     </form>
     </div>
     

@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-</body>
-</html>
 <?php
 // Database configuration
 $servername = "localhost";
@@ -24,20 +14,51 @@ if ($conn->connect_error) {
 }
 
 // SQL query to select all records from the jegyzetek table
-$sql = "SELECT cikkek FROM cikkek WHERE id='2'";
+$sql = "SELECT cikkek FROM hun_cikkek WHERE id='2'";
 $result = $conn->query($sql);
-
-// Check if any records were returned and display them
-if ($result->num_rows > 0) {
-    // Output each row's data
-    while($row = $result->fetch_assoc()) {
-        echo "<p><strong>Cikk2</strong> " . $row["cikkek"] . "</p>";
-        echo "<hr>"; // Separator for each record
-    }
-} else {
-    echo "No records found.";
-}
-
-// Close the connection
-$conn->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirchhoff törvények</title>
+    <link rel="stylesheet" href="kartya.css">
+</head>
+<body>
+    <div>
+    <nav>
+    <ul>
+        <li><a href="index.php">FŐOLDAL</a></li>
+            <li><a href="logout.php">KIJELENTKEZÉS</a></li>
+        <li class="dropdown">
+    <a class="dropbtn">NYELV</a>
+    <div class="dropdown-content">
+      <a href="eng_elektrotechnika2.php">ENGLISH</a>
+    </ul>
+    </nav>
+    </div>
+        <div class="subject-container">
+            <div class="card" style="width:70%">
+            <?php if ($result->num_rows > 0) {
+         while($row = $result->fetch_assoc()) {
+        echo "<p>" . $row["cikkek"] . "</p>";
+         }
+        }
+        $conn->close();
+    ?>
+    </div>
+    </div>
+    <div class="img-container">
+        <div class="img-card">
+            <img src="kep4.png">
+        </div>
+        <div class="img-card">
+        <img src="kep5.png">
+    </div>
+</div>
+</div>
+    
+</body>
+</html>

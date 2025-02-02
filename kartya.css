@@ -211,3 +211,8 @@ button{
     font-family: Arial;
     cursor: pointer;
 }
+
+img{
+    width: 50%;
+    height: 505;
+}
