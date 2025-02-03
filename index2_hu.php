@@ -11,7 +11,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Homepage</title>
+<title>Főoldal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -29,16 +29,16 @@ body {font-family: "Open Sans"}
 <div class="w3-bar w3-black w3-hide-small">
   <a href="https://www.facebook.com/bukris.david" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
   <a href="https://www.instagram.com/bukris_dejvid/" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
-  <a href="index2.php" class="w3-bar-item w3-button">Home</a>
+  <a href="index2_hu.php" class="w3-bar-item w3-button">Főoldal</a>
   <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button" title="language">Language <i class="fa fa-caret-down"></i></button>     
+      <button class="w3-button" title="language">Nyelv<i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="index2_hu.php" class="w3-bar-item w3-button">Magyar</a>
+        <a href="index.php" class="w3-bar-item w3-button">English</a>
       </div>
     </div>
-  <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
-  <a href="reset-password.php" class="w3-bar-item w3-button">Reset Password</a>
-  <b class="w3-bar-item">Welcome <?php echo htmlspecialchars($_SESSION["username"]); ?></b>
+  <a href="logout.php" class="w3-bar-item w3-button">Kijelentkezes</a>
+  <a href="reset-password.php" class="w3-bar-item w3-button">Jelszo valtoztatas</a>
+  <b class="w3-bar-item">Udvozlet <?php echo htmlspecialchars($_SESSION["username"]); ?></b>
 </div>
   
 <!-- w3-content defines a container for fixed size centered content, 
@@ -47,7 +47,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   <!-- Header -->
   <header class="w3-container w3-center w3-padding-48 w3-white">
-    <h1 class="w3-xxxlarge"><b>Become an electrician</b></h1>
+    <h1 class="w3-xxxlarge"><b>Legyen on is elektromos</b></h1>
   </header>
 
 
@@ -60,15 +60,15 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Blog entry -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
-          <h3>ELEKTROTECHNICS</h3>
+          <h3>ELEKTROTECHNIKA</h3>
         </div>
 
         <div class="w3-justify">
-          <p>Electrical engineering is a scientific and technical discipline that deals with the technical applications of electromagnetism , including the generation, distribution and conversion of electrical energy into other forms of energy, the construction of communication, signalling, computing and other electrical equipment. According to the values of current and voltage, electrical engineering is divided into high-current and low-current.
+          <p>A villamosmérnöki tudomány és műszaki tudományág az elektromágnesesség műszaki alkalmazásaival foglalkozik, beleértve az elektromos energia előállítását, elosztását és más energiaformákká történő átalakítását, valamint a kommunikációs, jelző- és számítástechnikai és egyéb elektromos berendezések építését. Az áram és a feszültség értékei szerint az elektrotechnikát nagyáramú és gyengeáramúakra osztják.
 </p>
-          <p>Electrical engineering is also a branch of human activity concerned with the practical use of electrical energy . Hence, the scope of electrical engineering ranges from the simplest devices such as lightning rods to the most complex human creations such as computers , from digital watches to atomic power plants .</p>
+          <p>Az elektrotechnika az emberi tevékenységnek az elektromos energia gyakorlati felhasználásával foglalkozó ága is. Ezért a villamosmérnöki tevékenység a legegyszerűbb eszközöktől, mint például a villámhárítótól a legbonyolultabb emberi alkotásokig, mint például a számítógépek , a digitális órától az atomerőművekig terjed.</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
-          <p class="w3-right"><a class="w3-button w3-black" href="eng_elektrotechnika.php">More</a></p>
+          <p class="w3-right"><a class="w3-button w3-black" href="eng_elektrotechnika.php">Tovabb</a></p>
           <p class="w3-clear"></p>
         </div>
       </div>
@@ -76,16 +76,15 @@ and is wrapped around the whole page content, except for the footer in this exam
       <!-- Blog entry -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
-          <h3>COMPUTER SYSTEMS</h3>
-          <h5>Title description, <span class="w3-opacity">April 23, 2016</span></h5>
+          <h3>SZAMITOGEPES RENDSZEREK</h3>
         </div>
 
         <div class="w3-justify">
-          <p><strong>Hats!</strong> The trend this summer is hats for men!</p>
-          <p>Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies
-            mi non congue ullam corper. Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+          <p>
+          A számítógépes rendszer olyan hardver- és szoftverkomponensekből álló összetett egység, amely adatfeldolgozási, tárolási és kommunikációs feladatokat lát el. Ezek a rendszerek lehetnek egyszerű, egyetlen felhasználós gépek, de összetettebb hálózati struktúrák, például szerverfarmok vagy elosztott rendszerek is.</p>
+          <p>A számítógépes rendszereket különböző célokra használják, például üzleti, tudományos, szórakoztatóipari vagy oktatási területen. Az információbiztonság és a rendszerhatékonyság kiemelten fontos szempontok ezek működtetésénél.</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
-          <p class="w3-right"><a class="w3-button w3-black" href=".php">More</a></p>
+          <p class="w3-right"><a class="w3-button w3-black" href="pos.php">Tovabb</a></p>
           <p class="w3-clear"></p>
         </div>
       </div>

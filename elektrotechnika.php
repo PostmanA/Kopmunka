@@ -1,30 +1,3 @@
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root"; // Change to your MySQL username
-$password = ""; // Change to your MySQL password
-$dbname = "comments";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $message = $_POST['message'];
-    $sql = "INSERT INTO comments (username, message) VALUES (?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $username, $message);
-    $stmt->execute();
-}
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,23 +5,40 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELEKTROTECHNIKA</title>
     <link rel="stylesheet" href="kartya.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <div>
-    <nav>
-    <ul>
-        <li><a href="index.php">FŐOLDAL</a></li>
-            <li><a href="logout.php">KIJELENTKEZÉS</a></li>
-        <li class="dropdown">
-    <a class="dropbtn">NYELV</a>
-    <div class="dropdown-content">
-      <a href="eng_elektrotechnika.php">ENGLISH</a>
-    </ul>
-    </nav>
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="https://www.facebook.com/bukris.david" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+  <a href="https://www.instagram.com/bukris_dejvid/" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+  <a href="index2.php" class="w3-bar-item w3-button">Főoldal</a>
+  <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button" title="language">Nyelv<i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="eng_elektrotechnika.php" class="w3-bar-item w3-button">English</a>
+      </div>
     </div>
+  <a href="logout.php" class="w3-bar-item w3-button">Kijelentkezes</a>
+</div>
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
     <div>
     <h1 class="mtitle">ELEKTROTECHNIKA</h1>
     </div>
+
         <div class="subject-container">
             <div class="card">
             <h2>Ohm Törvénye</h2>
@@ -71,53 +61,5 @@ Kirchhoff törvények nyújtanak segítséget.</p>
             <a href="elektrotechnika_anyag3.php">Olvasson tovább...</a>
         </div>
         </div>
-        <div class="comment-section">
-        <h1 style="text-align: center">Komment szekció</h1>
-        <form action="elektrotechnika.php" method="post">
-        <input type="text" name="username" placeholder="Felhasználónév" required>
-        <input type="text" name="message" placeholder="Hozzsászólás" required>
-        <input type="submit" value="Elküldés">
-    </form>
-    </div>
-    
-
-    <script>
-        const prohibitedWords = [
-            "balfasz", "balfaszok", "balfaszokat", "balfaszt", "barmok", "barmokat", "barmot", "barom", 
-            "baszik", "bazmeg", "buksza", "bukszák", "bukszákat", "bukszát", "búr", "búrok", "csöcs", 
-            "csöcsök", "csöcsöket", "csöcsöt", "fasz", "faszfej", "faszfejek", "faszfejeket", "faszfejet", 
-            "faszok", "faszokat", "faszt", "fing", "fingok", "fingokat", "fingot", "franc", "francok", 
-            "francokat", "francot", "geci", "gecibb", "gecik", "geciket", "gecit", "kibaszott", 
-            "kibaszottabb", "kúr", "kurafi", "kurafik", "kurafikat", "kurafit", "kurva", "kurvák", 
-            "kurvákat", "kurvát", "leggecibb", "legkibaszottabb", "legszarabb", "marha", "marhák", 
-            "marhákat", "marhát", "megdöglik", "pele", "pelék", "picsa", "picsákat", "picsát", "pina", 
-            "pinák", "pinákat", "pinát", "pofa", "pofákat", "pofát", "pöcs", "pöcsök", "pöcsöket", 
-            "pöcsöt", "punci", "puncik", "segg", "seggek", "seggeket", "segget", "seggfej", "seggfejek", 
-            "seggfejeket", "seggfejet", "szajha", "szajhák", "szajhákat", "szajhát", "szar", "szarabb", 
-            "szarik", "szarok", "szarokat", "szart","kuki"
-        ];
-
-        function checkWord() {
-            const comment = document.getElementById("comment").value.trim().toLowerCase();
-            const resultDiv = document.getElementById("result");
-
-            if (Comment === "") {
-                resultDiv.textContent = "Please enter a word!";
-                resultDiv.className = "result";
-                return;
-            }
-
-            if (prohibitedWords.includes(comment)) {
-                resultDiv.textContent = `"${comment}" is in the prohibited list!`;
-                resultDiv.className = "FALSE";
-            } else {
-                resultDiv.textContent = `"${comment}" is not in the prohibited list.`;
-                resultDiv.className = "TRUE";
-
-
-            }
-        }
-    
-    </script>
 </body>
 </html>
