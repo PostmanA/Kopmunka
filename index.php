@@ -59,7 +59,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
         <div class="subject">
             <h2>Játék</h2>
-            <a href="game2.php" class="subject-button">
+            <a href="game.php" class="subject-button">
                 <img src="psController.png" alt="Játék">
             </a>
         </div>

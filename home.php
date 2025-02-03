@@ -15,13 +15,19 @@ if ($conn->connect_error) {
 
 // Variables to upload
 $name = "cikk3"; // Replace this with your variable for name
-$cikkek = "Ohm német fizikus (1787-1854) az ellenállást a feszültségből és a hatására kialakuló áramerősségből határozta meg. Azt tapasztalta, hogy egy áramkörben a két mennyiség hányadosa jellemző az adott fogyasztóra és állandó érték:
-Az összefüggés átrendezésével a törvény más alakban is felírható:
-A második összefüggés tartalma szavakban: egy ellenálláson áram folyik, ha rajta feszültség van. Az ellenállás árama egyenesen arányos a rajta lévő feszültséggel, és fordítottan arányos az ellenállás értékével. Hasonlóan a harmadik képlet: ha egy R ellenálláson I áramerősség folyik, akkor rajta U = I · R feszültségnek kell lenni, vagyis a rajta mérhető feszültség egyenesen arányos az ellenállásával és az áramával. Jegyezzük meg, hogy U, I és R összetartozó mennyiségek, vagyis az Ohm törvény egy adott R ellenálláshoz tartozó áramerősség és feszültség kapcsolatát fejezi ki! Az I=U/R összefüggés értelmében egy áramkörben nagy az áramerősség, ha a fogyasztó ellenállása kicsi. Az ellenállást csökkentve olyan nagy áram alakul ki, hogy a generátor vagy az összekötő vezeték károsodik. A túláram ellen a rendszert biztosítóval védjük, melyet az áramkörben a fogyasztóval sorba kapcsolunk. A biztosító olyan alkatrész, amely a rá jellemző áramerősségnél az áramkört automatikusan megszakítja. R=0 esetén nincs fogyasztó az áramkörben, és ekkor 1 = ∞, Ezt nevezzük rövidzárnak, mert a generátor által szétválasztott töltések akadálytalanul és közvetlenül a generátor kapcsai között egyenlítődnek ki. A gyakorlatban minden anyagnak van ellenállása, ezért az áramerősség sohasem lehet végtelen, legfeljebb rendkívül nagy, vagyis ideális rövidzár nincs. A végtelen nagy ellenállás (szakadás) sem fogyasztó, mert ekkor nem folyik áram (I = 0), így nincs energia átalakulás sem. Rövidesen látni fogjuk, hogy az Ohm törvény az elektronikában csak megkötésekkel érvényes, mert nagyon sok alkatrész ellenállása függ a feszültségtől, illetve a rajta átfolyó áramtól, másrészt vannak olyan alkatrészek is (kondenzátor és induktivitás), amelyekben az Ohm törvény ugyan érvényes, de az áramkorlátozó hatást nem a töltéshordozónak a közeg atomjaival történő ütközése (rezisztencia), hanem más kölcsönhatás határozza meg (1. később). A rezisztenciának, vagyis R-nek a másik neve ezért ohmos ellenállás. Csak ez képes a villamos energiát, mint fogyasztó, más hasznosítható energiává alakítani.
+$cikkek = "The voltage divider
+Applying Ohm's and Kirchhoff's laws to notable circuits further
+important laws can be established. The law of voltage division can be derived from the series connection of resistors. In this case, the resistors have the same current, while the voltage U1 and U2 occur at R1 and R2 respectively. In series connection, the voltages across each resistor are proportional to each other as the values of the resistors. The law of voltage division is the basis of a commonly used circuit in electronics called a voltage divider. A voltage divider is a four-pole. In the simplest case, it consists of two resistors in series. When a voltage is connected between points A and B of the system (the input of the quadripole), a current is generated and a voltage is applied across the resistors. According to Kirchhoff's Law II, the sum of the two voltages is always equal to the voltage of the supplying generator.
+
+The current divider
+The other notable network is the current divider, which, according to Kirchhoff's Law I, is
+is derived from the parallel connection of resistors. Parallel connection means that the resistors have the same voltage (U). This results in a current flowing through one resistor I1 = U/R1 and through the other I2 = U/R2.In parallel connection, the currents are inversely proportional to the resistances of the branches. The current flowing into the node is divided by the resistances, with a smaller current flowing through the higher resistance and a larger current flowing through the lower resistance
+
+
 "; // Content for cikkek column
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO cikkek (name, cikkek) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO eng_cikkek (name, cikkek) VALUES (?, ?)");
 $stmt->bind_param("ss", $name, $cikkek); // "ss" specifies both variables are strings
 
 // Execute the query

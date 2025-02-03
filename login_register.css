@@ -19,7 +19,7 @@ body {
     grid-template-columns: 2fr;
     width: 90%;
     max-width: 1200px;
-    background-color: #1D1D42;
+    background-color: rgb(29, 29, 66);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

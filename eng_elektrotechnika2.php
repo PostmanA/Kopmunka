@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to select all records from the jegyzetek table
-$sql = "SELECT cikkek FROM hun_cikkek WHERE id='1'";
+$sql = "SELECT cikkek FROM eng_cikkek WHERE id='2'";
 $result = $conn->query($sql);
 ?>
 
@@ -23,19 +23,19 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ohm's law</title>
     <link rel="stylesheet" href="kartya.css">
 </head>
 <body>
     <div>
     <nav>
     <ul>
-        <li><a href="index.php">FŐOLDAL</a></li>
-            <li><a href="logout.php">KIJELENTKEZÉS</a></li>
+        <li><a href="index.php">HOME</a></li>
+            <li><a href="logout.php">LOG  OUT</a></li>
         <li class="dropdown">
-    <a class="dropbtn">NYELV</a>
+    <a class="dropbtn">LANGUAGE</a>
     <div class="dropdown-content">
-      <a href="eng_elektrotechnika1.php">ENGLISH</a>
+      <a href="elektrotechnika_anyag2.php">MAGYAR</a>
     </ul>
     </nav>
     </div>
@@ -52,13 +52,11 @@ $result = $conn->query($sql);
     </div>
     <div class="img-container">
         <div class="img-card">
-            <img src="kep1.png">
+            <img src="kep4.png">
         </div>
         <div class="img-card">
-        <img src="kep2.png">
+        <img src="kep5.png">
         </div>
-        <div class="img-card">
-        <img src="kep3.png">
 </div>
 </div>
     
