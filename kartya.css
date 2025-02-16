@@ -1,59 +1,44 @@
 
-.subject-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-}
+        /* Center the subject container */
+        .subject-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-.card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    padding: 20px;
-    text-align: justify;
-}
+        /* Card styling */
+        .card {
+            width: 70%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
 
-.card h2 {
-    color: #e94e3f;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
+        /* Image container - aligns images horizontally */
+        .img-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Space between images */
+            margin-top: 20px;
+        }
 
-.card p {
-    font-size: 20px;
-    line-height: 1.5;
-    color: #666;
-}
+        /* Image card - making them bigger */
+        .img-card {
+            flex: 1; /* Makes sure all images take equal space */
+            max-width: 250px; /* Adjust image size */
+            background: white;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.img-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-}
-.img-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    padding: 10px;
-    text-align: center;
-}
-textarea{
-    width: 400px;
-    height: 80px;
-    background-color: #ffff;
-    resize: none;
-}
-
-img{
-    width: 50%;
-    height: 505;
-}
-.mtitle{
-    text-align: center;
-}
+        .img-card img {
+            width: 100%; /* Make images fully fit */
+            height: auto;
+            border-radius: 6px;
+        }

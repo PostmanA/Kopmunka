@@ -14,20 +14,20 @@ if ($conn->connect_error) {
 }
 
 // Variables to upload
-$name = "cikk3"; // Replace this with your variable for name
-$cikkek = "The voltage divider
-Applying Ohm's and Kirchhoff's laws to notable circuits further
-important laws can be established. The law of voltage division can be derived from the series connection of resistors. In this case, the resistors have the same current, while the voltage U1 and U2 occur at R1 and R2 respectively. In series connection, the voltages across each resistor are proportional to each other as the values of the resistors. The law of voltage division is the basis of a commonly used circuit in electronics called a voltage divider. A voltage divider is a four-pole. In the simplest case, it consists of two resistors in series. When a voltage is connected between points A and B of the system (the input of the quadripole), a current is generated and a voltage is applied across the resistors. According to Kirchhoff's Law II, the sum of the two voltages is always equal to the voltage of the supplying generator.
+$name = "cikk6"; // Replace this with your variable for name
+$cikkek = "A funkcionális áramkörök olyan digitális integrált áramkörök, amelyek egy adott feladat ellátására készültek. Közös jellemzőjük, hogy kapukból és tárolókból épülnek fel és az áramköri toknak csak a funkció ellátásához szükséges kivezetései vannak. A digitális áramkörökben ezeket alkatrészként használjuk, jellemzőik, működésüket leíró táblázataik a katalógusokban megtalálhatók.
+A multiplexer adatválasztó áramkör, amely a bemenetek közül a címezéssel kiválasztottat kapcsolja a kimenetre. Négy adatbemenettel és két címbemenettel rendelkezik, ezért 4/1 (négyből egy) multiplexerként ismert.
 
-The current divider
-The other notable network is the current divider, which, according to Kirchhoff's Law I, is
-is derived from the parallel connection of resistors. Parallel connection means that the resistors have the same voltage (U). This results in a current flowing through one resistor I1 = U/R1 and through the other I2 = U/R2.In parallel connection, the currents are inversely proportional to the resistances of the branches. The current flowing into the node is divided by the resistances, with a smaller current flowing through the higher resistance and a larger current flowing through the lower resistance
+A címbemenetek bináris cím bitjei vezérlik az ÉS kapukat, amelyek csak a megfelelő bemenethez engedélyezik a kimenetet. Az ST (Strobe) bemenet az egész áramkört engedélyezi vagy tiltja. Multiplexerek kaszkádosítással (bővítéssel) nagyobb méretű áramkörökké alakíthatók, például két 4/1 multiplexer egy 8/1 multiplexert hoz létre.
 
+A multiplexerek adatválasztási célra, függvényrealizálásra vagy párhuzamos-soros átalakítókhoz használhatók. Egy multiplexer diszjunktív függvényt képes megvalósítani, ahol a bemenetek bináris címzéssel egy adott függvény termjeit képviselik.
 
-"; // Content for cikkek column
+A párhuzamos-soros átalakítókban a multiplexer címzési áramkör lépésenként végigcímzi az adatbemeneteket, így a kimeneten sorosan jelennek meg az adatok, az órajel ütemezésével.
+A demultiplexerek a multiplexerekhez képest ellenkező jellegű funkciót látnak el: az egy vonalon érkező információt több kimenet között osztják szét. A kimenetek közül címezéssel választanak. A demultiplexerek belső felépítésének elvét egy ábra mutatja, jelképi jelölésével együtt, 1/4 demultiplexer esetén. A tényleges belső felépítés ettől eltérhet, mert másképpen történik a konkrét áramköri kialakítás TTL és másképpen a MOS áramköröknél. Bármilyen is a tényleges áramkör, a megvalósított funkció az ábrán láthatónak felel meg. A címzés áramköre megegyezik a multiplexernél megismert áramkörrel. Az adatbemenet egy engedélyezést/tiltást végző ÉS kapun keresztül kapcsolódik a kimenetre. Az engedélyezés/tiltás a G (gate – kapu) bemeneten keresztül lehetséges. Szokásos jelölése még: E (enable – engedélyezés). A felhasználás szempontjából ez a bemenet tulajdonképpen az egész tokot engedélyezi/tiltja. A kapcsolásból látszik, hogy az adatbemenet és az engedélyező bemenet felcserélhető. A katalógusok ezért jelölik.";
+// Content for cikkek column
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO eng_cikkek (name, cikkek) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO hun_cikkek (name, cikkek) VALUES (?, ?)");
 $stmt->bind_param("ss", $name, $cikkek); // "ss" specifies both variables are strings
 
 // Execute the query

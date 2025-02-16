@@ -21,7 +21,7 @@ body {font-family: "Open Sans"}
 <div class="w3-bar w3-black w3-hide-small">
   <a href="https://www.facebook.com/bukris.david" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
   <a href="https://www.instagram.com/bukris_dejvid/" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
-  <a href="index2_hu.php" class="w3-bar-item w3-button">Főoldal</a>
+  <a href="index_hu.php" class="w3-bar-item w3-button">Főoldal</a>
   <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-button" title="language">Nyelv<i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
